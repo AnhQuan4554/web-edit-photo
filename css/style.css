@@ -1,0 +1,444 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+
+* ul, * li {
+  list-style: none;
+}
+
+* a {
+  text-decoration: none;
+}
+
+.app {
+  height: 100vh;
+  max-width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: 100vh;
+  position: relative;
+  background-color: #222831;
+  overflow: hidden;
+}
+
+.warp-listHandle {
+  width: 200px;
+  height: 100%;
+  background-color: #393E46;
+}
+
+.warp-listHandle h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+  color: #00ADB5;
+}
+
+.warp-listHandle .animateH1 {
+  position: relative;
+  left: 50px;
+}
+
+.listHandle .iteam {
+  position: relative;
+  margin-top: 20px;
+}
+
+.listHandle .iteam .iteam-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.listHandle .iteam .iteam-icon a {
+  padding: 0 14px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 21px;
+  color: #00ADB5;
+}
+
+.listHandle .iteam .iteam-icon a i {
+  font-size: 22px;
+}
+
+.listHandle .iteam .iteam-icon .bxs-chevron-down {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.listHandle .iteam .iteam-icon.active {
+  background-color: #476072;
+}
+
+.listHandle .iteam .iteam-icon.active .bxs-chevron-down {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.listHandle .iteam .iteam-icon.active ~ .adjust-list {
+  display: block;
+  opacity: 1;
+}
+
+.listHandle .iteam .iteam-icon.active ~ .adjust-list--default {
+  display: block;
+  opacity: 1;
+}
+
+.listHandle .iteam .iteam-icon i {
+  color: #fff;
+  font-size: 20px;
+}
+
+.listHandle .iteam .adjust-list, .listHandle .iteam .adjust-list--default {
+  position: relative;
+  display: none;
+  opacity: 0;
+}
+
+.listHandle .iteam .adjust-list .adjust-link, .listHandle .iteam .adjust-list .adjust-link--default, .listHandle .iteam .adjust-list--default .adjust-link, .listHandle .iteam .adjust-list--default .adjust-link--default {
+  padding: 0 50px;
+  margin-top: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #ccc;
+  font-size: 15px;
+  opacity: 0.6;
+}
+
+.listHandle .iteam .adjust-list .adjust-link:hover, .listHandle .iteam .adjust-list .adjust-link--default:hover, .listHandle .iteam .adjust-list--default .adjust-link:hover, .listHandle .iteam .adjust-list--default .adjust-link--default:hover {
+  opacity: 1;
+}
+
+.listHandle .iteam .adjust-list .adjust-link--default, .listHandle .iteam .adjust-list--default .adjust-link--default {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.listHandle .iteam .adjust-list .adjust-link--default:hover, .listHandle .iteam .adjust-list--default .adjust-link--default:hover {
+  background-color: #476072;
+}
+
+.listHandle .iteam .adjust-list .adjust-link--default i, .listHandle .iteam .adjust-list--default .adjust-link--default i {
+  font-size: 20px;
+  display: none;
+}
+
+.listHandle .iteam .adjust-list .adjust-link--default.active i, .listHandle .iteam .adjust-list--default .adjust-link--default.active i {
+  display: block;
+  color: #11f318;
+}
+
+.listHandle .iteam .adjust-list .wrap-adjust-list, .listHandle .iteam .adjust-list--default .wrap-adjust-list {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.listHandle .iteam .adjust-list .wrap-adjust-list .adjust-img img, .listHandle .iteam .adjust-list--default .wrap-adjust-list .adjust-img img {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.listHandle .iteam .adjust-list .wrap-adjust-list .adjust-img img:hover, .listHandle .iteam .adjust-list--default .wrap-adjust-list .adjust-img img:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.display {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 80vh;
+  border: 5px solid #1c1b1b;
+  position: relative;
+}
+
+.display .bx-plus-circle {
+  font-size: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #ccc;
+  padding: 160px 260px;
+}
+
+.display .bx-plus-circle:hover {
+  color: #fff;
+}
+
+.display .warpCan {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.display .warpCan a {
+  display: block;
+  margin-top: 6px;
+  text-align: center;
+  line-height: 30px;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+.tool--click {
+  border-radius: 10px;
+  background-color: #6b5b5b;
+  position: absolute;
+  top: 107%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.tool--click .type-value {
+  color: #000;
+  outline: none;
+  padding: 6px;
+}
+
+.tool--click .tool--click-icon {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-radius: 10px;
+}
+
+.tool--click .tool--click-icon i {
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.tool--click .tool--click-icon i:active {
+  background-color: #00ADB5;
+}
+
+.confirm {
+  position: absolute;
+  top: 86%;
+  right: 200px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.warpUpload {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 35px;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  font-size: 20px;
+  color: red;
+}
+
+.draw #changeColor {
+  height: 24px;
+  margin-top: 10px;
+}
+
+.draw a {
+  display: block;
+  text-align: center;
+}
+
+.draw .size {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.draw .size span {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #FDF6F0;
+}
+
+.draw .wrapBtnsize {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 40px;
+}
+
+.draw .wrapBtnsize button {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 6px;
+  background-color: #F5C6AA;
+}
+
+.draw .wrapBtnsize button i {
+  font-size: 20px;
+}
+
+.draw .earse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10px;
+  padding: 0 40px;
+}
+
+.draw .earse i {
+  font-size: 40px;
+  border-radius: 10px;
+  background-color: #F8E2CF;
+}
+
+.wrapRest {
+  border: 2px solid aqua;
+  margin-top: 40px;
+}
+
+.resetFilter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 50px 0;
+}
+
+.resetFilter:hover {
+  background-color: #548CA8;
+}
+
+.resetFilter button {
+  background-color: #f6e7e6;
+  font-size: 20px;
+  border-radius: 7px;
+}
+
+.resetFilter button:hover {
+  background-color: #548CA8;
+}
+
+.resetFilter .bx-reset {
+  font-size: 30px;
+  color: #f6e7e6;
+}
+
+.save {
+  cursor: pointer;
+}
+
+.save:hover {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.save:hover i {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+/*# sourceMappingURL=style.css.map */
